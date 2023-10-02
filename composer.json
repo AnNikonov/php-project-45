@@ -1,0 +1,17 @@
+{
+    "name": "hexlet/code",
+    "description": "brain-games proect for Hexlet by Anton Nikonov",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AnNikonov",
+            "email": "nikonov.web@gmail.com"
+        }
+    ],
+    "require": {}
+}
