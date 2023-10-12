@@ -5,6 +5,6 @@
 require "./vendor/autoload.php";
 require_once "./src/even-game.php";
 
-use function \Cli\gamestart;
+use function even\Game\evenGame;
 
-gamestart();
+evenGame();
