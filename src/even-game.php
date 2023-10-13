@@ -18,14 +18,24 @@ function evenGame()
         line("Question: %s", $randomNumber);
         $userAnswer = prompt("Yuor answer");
         
-        if ($randomNumber % 2 == 0 && $userAnswer == "yes") {
-            line("Correct!");
-        } elseif($randomNumber % 2 != 0 && $userAnswer == "no") {
-            line("Correct!");
-        } else {
-            line("Wrong");
-            line("Try again");
-            exit;
+        if ($randomNumber % 2 == 0) {
+            $correctanswer = "yes";
+            if ($userAnswer == $correctanswer) {
+                line("Correct!");
+            } else {
+                line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctanswer\"");
+                line("Let's try again, $name!");
+                exit;
+            }
+        } elseif($randomNumber % 2 != 0) {
+            $correctanswer = "no";
+            if ($userAnswer == $correctanswer) {
+                line("Correct!");
+            } else {
+                line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctanswer\"");
+                line("Let's try again, $name!");
+                exit;
+            }
         }
     }
     line("Congratulations, %s!", $name);
