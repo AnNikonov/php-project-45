@@ -21,6 +21,6 @@
         "bin/brain-even"
       ],
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.2"
+        "squizlabs/php_codesniffer": "3.6.0"
     }
 }
