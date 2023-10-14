@@ -11,7 +11,6 @@ use function Engine\answerChecker;
 
 function evenGame()
 {
-    helloUser();
     $name = helloUser();
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
