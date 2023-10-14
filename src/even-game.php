@@ -2,8 +2,11 @@
 
 namespace even\Game;
 
+require_once "src/answer-checker.php";
+
 use function cli\line;
 use function cli\prompt;
+use function answer\Checker\answerChecker;
 
 function evenGame()
 {
@@ -20,22 +23,11 @@ function evenGame()
         
         if ($randomNumber % 2 == 0) {
             $correctanswer = "yes";
-            if ($userAnswer == $correctanswer) {
-                line("Correct!");
-            } else {
-                line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctanswer\"");
-                line("Let's try again, $name!");
-                exit;
-            }
+            answerChecker($userAnswer, $correctanswer, $name);
+
         } elseif($randomNumber % 2 != 0) {
             $correctanswer = "no";
-            if ($userAnswer == $correctanswer) {
-                line("Correct!");
-            } else {
-                line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctanswer\"");
-                line("Let's try again, $name!");
-                exit;
-            }
+            answerChecker($userAnswer, $correctanswer, $name);
         }
     }
     line("Congratulations, %s!", $name);
