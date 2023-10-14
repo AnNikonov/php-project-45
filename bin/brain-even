@@ -4,6 +4,7 @@
 
 require "./vendor/autoload.php";
 require_once "./src/even-game.php";
+require_once "src/answer-checker.php";
 
 use function even\Game\evenGame;
 
