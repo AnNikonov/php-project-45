@@ -15,7 +15,7 @@ function helloUser()
     return $name;
 }
 
-function answerChecker ($userAnswer, $correctanswer, $name)
+function answerChecker($userAnswer, $correctanswer, $name)
 {
     if ($userAnswer == $correctanswer) {
         line("Correct!");
