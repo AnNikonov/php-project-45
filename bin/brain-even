@@ -3,8 +3,7 @@
 <?php
 
 require "./vendor/autoload.php";
-require_once "./src/even-game.php";
-require_once "src/answer-checker.php";
+require_once "./src/Games/even-game.php";
 
 use function even\Game\evenGame;
 
