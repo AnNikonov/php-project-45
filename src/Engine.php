@@ -25,3 +25,12 @@ function answerChecker($userAnswer, $correctanswer, $name)
         exit;
     }
 }
+
+function gcd($randomNumber1, $randomNumber2) {
+    while ($randomNumber1 != $randomNumber2)
+        if ($randomNumber1>$randomNumber2)
+            $randomNumber1 -= $randomNumber2;
+        else
+            $randomNumber2 -= $randomNumber1;
+    return $randomNumber1;
+}
