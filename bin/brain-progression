@@ -3,8 +3,8 @@
 <?php
 
 require "./vendor/autoload.php";
-require_once "./src/Games/progress-game.php";
+require_once "./src/Games/progression-game.php";
 
 use function progression\Game\progressGame;
 
-//progressGame();
+progressGame();
