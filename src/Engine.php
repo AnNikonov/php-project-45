@@ -57,7 +57,38 @@ function makeProgression($count = 10): array
     $result = implode(' | ', $result);
 
 //    print_r (['test' => $result, 'correctAnswer' => $correctNum]);
-    return ['test' => $result, 'correctAnswer' => $correctNum];
+    return ['type' =>'progress','test' => $result, 'correctAnswer' => $correctNum];
+}
+
+function makeCalc()
+{
+    $operators = ["+", "-", "*"];
+    $operator = $operators[array_rand($operators)];
+    $operand1 = rand(1,10);
+    $operand2 = rand(1,10);
+
+    switch ($operator) {
+        case "+":
+            $result = "$operand1 + $operand2";
+            $correct = $operand1 + $operand2;
+            break;
+        case "-":
+            $result = "$operand1 - $operand2";
+            $correct = $operand1 - $operand2;
+            break;
+        case "*":
+            $result = "$operand1 * $operand2";
+            $correct = $operand1 * $operand2;
+            break;
+        default:
+            $result = null;
+            $correct = null;
+            break;
+    }
+
+//    print_r(['test' => $result, 'correctAnswer' => $correct]);
+    return ['type' =>'calc', 'test' => $result, 'correctAnswer' => $correct];
+
 }
 
 function playGame($gameData) {
@@ -69,7 +100,20 @@ function playGame($gameData) {
         line("Question: %s", $gameData['test'] );
         $userAnswer = prompt("Your answer");
         if (answerChecker($userAnswer, $gameData['correctAnswer'], $name)) {
-            $gameData = progressGame();
+            switch ($gameData['type']) {
+                case "calc":
+                    $gameData = makeCalc();
+                    break;
+                case "progress":
+                    $gameData = makeProgression();
+                    break;
+//                case "calc":
+//                    $gameData = makeCalc();
+//                    break;
+//                default:
+//                    $gameData = null;
+//                    break;
+            }
         }
 //        answerChecker($userAnswer, $gameData['correctAnswer'], $name);
 

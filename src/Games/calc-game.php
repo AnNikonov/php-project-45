@@ -8,31 +8,27 @@ use function cli\line;
 use function cli\prompt;
 use function Engine\helloUser;
 use function Engine\answerChecker;
+use function Engine\makeProgression;
+use function Engine\playGame;
+use function Engine\makeCalc;
 
+const QUEST = 'What is the result of the expression?';
 function calcGame()
 {
-    $name = helloUser();
-    line('What is the result of the expression?');
-    $operators = ["+", "-", "*"];
+    $gameData = [
+        'type' => 'calc',
+        'quest' => QUEST,
+        'test' => [],
+        'correctAnswer' => []
+    ];
 
-    for ($i = 0; $i < 3; $i++) {
-        $randomNumber1 = rand(1, 10);
-        $randomNumber2 = rand(1, 10);
-        $randomOperator = $operators[array_rand($operators)];
-        line("Question: %s", $randomNumber1 . $randomOperator . $randomNumber2 );
-        $userAnswer = prompt("Your answer");
+    $testData = makeCalc();
+    $gameData['test'] = $testData['test'];
+    $gameData['correctAnswer'] = $testData['correctAnswer'];
 
-        if ($randomOperator == "+") {
-            $correctanswer = $randomNumber1 + $randomNumber2;
-            answerChecker($userAnswer, $correctanswer, $name);
-        } elseif ($randomOperator == "-") {
-            $correctanswer = $randomNumber1 - $randomNumber2;
-            answerChecker($userAnswer, $correctanswer, $name);
-        } elseif ($randomOperator == "*") {
-            $correctanswer = $randomNumber1 * $randomNumber2;
-            answerChecker($userAnswer, $correctanswer, $name);
-        }
+//    print_r($gameData);
+    return $gameData;
 
-    }
-    line("Congratulations, %s!", $name);
 }
+
+playGame(calcGame());
