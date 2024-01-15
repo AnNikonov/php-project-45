@@ -12,3 +12,5 @@ brain-calc:
 	./bin/brain-calc
 brain-gcd:
 	./bin/brain-gcd
+progression:
+	./bin/brain-progression

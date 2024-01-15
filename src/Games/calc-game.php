@@ -20,7 +20,7 @@ function calcGame()
         $randomNumber2 = rand(1, 10);
         $randomOperator = $operators[array_rand($operators)];
         line("Question: %s", $randomNumber1 . $randomOperator . $randomNumber2 );
-        $userAnswer = prompt("Yuor answer");
+        $userAnswer = prompt("Your answer");
 
         if ($randomOperator == "+") {
             $correctanswer = $randomNumber1 + $randomNumber2;

@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+
+<?php
+
+require "./vendor/autoload.php";
+require_once "./src/Games/progress-game.php";
+
+use function progression\Game\progressGame;
+
+//progressGame();
