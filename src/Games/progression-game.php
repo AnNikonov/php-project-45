@@ -5,8 +5,8 @@ namespace progression\Game;
 const QUEST = 'What number is missing in the progression?';
 function makeProgression($count = 10): array
 {
-    $beginNum = rand(1,10);
-    $range = rand(1,10);
+    $beginNum = rand(1, 10);
+    $range = rand(1, 10);
 
     $result = [$beginNum];
 
@@ -14,7 +14,7 @@ function makeProgression($count = 10): array
         $result[] = $result[$i - 1] + $range;
     }
 
-    $rand = rand(0,$count);
+    $rand = rand(0, $count);
     $correct = $result[$rand];
     $result[$rand] = '..';
 

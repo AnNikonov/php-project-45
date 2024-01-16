@@ -55,32 +55,35 @@ function answerChecker($userAnswer, $correctAnswer, $name): bool
     }
 }
 
-function gcd($randomNumber1, $randomNumber2) {
-    while ($randomNumber1 != $randomNumber2)
-        if ($randomNumber1>$randomNumber2)
+function gcd($randomNumber1, $randomNumber2)
+{
+    while ($randomNumber1 != $randomNumber2) {
+        if ($randomNumber1>$randomNumber2) {
             $randomNumber1 -= $randomNumber2;
-        else
+        } else {
             $randomNumber2 -= $randomNumber1;
+        }
+    }
     return $randomNumber1;
 }
 
 ///getters///
-function getTest ($gameData)
+function getTest($gameData)
 {
     return $gameData['test'];
 }
 
-function getType ($gameData)
+function getType($gameData)
 {
     return $gameData['type'];
 }
 
-function getCorrectAnswer ($gameData)
+function getCorrectAnswer($gameData)
 {
     return $gameData['correctAnswer'];
 }
 
-function getQuest ($gameData)
+function getQuest($gameData)
 {
     return $gameData['quest'];
 }
