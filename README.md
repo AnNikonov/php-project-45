@@ -4,7 +4,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7b3c93b95b00184f0e88/maintainability)](https://codeclimate.com/github/AnNikonov/php-project-45/maintainability)
 
 _Brain-even_
-https://asciinema.org/a/Sqg2eK0QNOJynrV8MWwl87L1I
+<video width="320" height="240" controls>
+  <source src="casts/even.cast" type="video/cast">
+  Your browser does not support the video tag.
+</video>
 
 _Brain-calc_
 https://asciinema.org/a/5902kA0sZ3LRq0MCEdLfYwCmQ
