@@ -2,26 +2,16 @@
 
 namespace gcd\Game;
 
-require "./src/Engine.php";
-
-use function cli\line;
-use function cli\prompt;
-use function Engine\helloUser;
-use function Engine\answerChecker;
 use function Engine\gcd;
+const QUEST = 'What is the result of the expression?';
 
-function gcdGame()
+function makeGcd(): array
 {
-    $name = helloUser();
-    line('What is the result of the expression?');
 
-    for ($i = 0; $i < 3; $i++) {
-        $randomNumber1 = rand(1, 10);
-        $randomNumber2 = rand(1, 10);
-        line("Question: $randomNumber1 $randomNumber2" );
-        $userAnswer = prompt("Yuor answer");
-        $correctanswer = gcd($randomNumber1, $randomNumber2);
-        answerChecker($userAnswer, $correctanswer, $name);
-    }
-    line("Congratulations, %s!", $name);
+    $randomNumber1 = rand(1, 10);
+    $randomNumber2 = rand(1, 10);
+    $test = "{$randomNumber1} {$randomNumber2}";
+    $correctAnswer = gcd($randomNumber1, $randomNumber2);
+
+    return ['quest' => QUEST, 'type' =>'gcd', 'test' => $test, 'correctAnswer' => $correctAnswer];
 }

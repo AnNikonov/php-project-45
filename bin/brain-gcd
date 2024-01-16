@@ -4,7 +4,9 @@
 
 require "./vendor/autoload.php";
 require_once "./src/Games/gcd-game.php";
+require_once "./src/Engine.php";
 
-use function gcd\Game\gcdGame;
+use function Engine\playGame;
+use function gcd\Game\makeGcd;
 
-gcdGame();
+playGame(makeGcd());

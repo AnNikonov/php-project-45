@@ -9,6 +9,7 @@ use function cli\prompt;
 use function even\Game\makeEven;
 use function calc\Game\makeCalc;
 use function progression\Game\makeProgression;
+use function gcd\Game\makeGcd;
 
 ///main game start function///
 function playGame($gameData) {
