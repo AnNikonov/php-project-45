@@ -8,92 +8,10 @@ require "./vendor/autoload.php";
 use function cli\line;
 use function cli\prompt;
 use function even\Game\makeEven;
+use function calc\Game\makeCalc;
 use function progression\Game\progressGame;
-use const even\Game\QUEST;
 
-function helloUser()
-{
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    return $name;
-}
-
-function answerChecker($userAnswer, $correctAnswer, $name): bool
-{
-    if ($userAnswer == $correctAnswer) {
-        line("Correct!");
-        return true;
-    } else {
-        line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctAnswer\"");
-        line("Let's try again, $name!");
-        exit;
-    }
-}
-
-function gcd($randomNumber1, $randomNumber2) {
-    while ($randomNumber1 != $randomNumber2)
-        if ($randomNumber1>$randomNumber2)
-            $randomNumber1 -= $randomNumber2;
-        else
-            $randomNumber2 -= $randomNumber1;
-    return $randomNumber1;
-}
-
-function makeProgression($count = 10): array
-{
-    $beginNum = rand(1,10);
-    $range = rand(1,10);
-
-    $result = [$beginNum];
-
-    for ($i = 1; $i <= $count; $i++) {
-        $result[] = $result[$i - 1] + $range;
-    }
-
-    $rand = rand(0,$count);
-    $correctNum = $result[$rand];
-    $result[$rand] = '..';
-
-    $result = implode(' | ', $result);
-
-//    print_r (['test' => $result, 'correctAnswer' => $correctNum]);
-    return ['type' =>'progress','test' => $result, 'correctAnswer' => $correctNum];
-}
-
-function makeCalc()
-{
-    $operators = ["+", "-", "*"];
-    $operator = $operators[array_rand($operators)];
-    $operand1 = rand(1,10);
-    $operand2 = rand(1,10);
-
-    switch ($operator) {
-        case "+":
-            $result = "$operand1 + $operand2";
-            $correct = $operand1 + $operand2;
-            break;
-        case "-":
-            $result = "$operand1 - $operand2";
-            $correct = $operand1 - $operand2;
-            break;
-        case "*":
-            $result = "$operand1 * $operand2";
-            $correct = $operand1 * $operand2;
-            break;
-        default:
-            $result = null;
-            $correct = null;
-            break;
-    }
-
-//    print_r(['test' => $result, 'correctAnswer' => $correct]);
-    return ['type' =>'calc', 'test' => $result, 'correctAnswer' => $correct];
-
-}
-
-
-
+///main game start function///
 function playGame($gameData) {
 
     $name = helloUser();
@@ -125,7 +43,37 @@ function playGame($gameData) {
     line("Congratulations, %s!", $name);
 }
 
-///getters
+///help functions///
+function helloUser()
+{
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return $name;
+}
+
+function answerChecker($userAnswer, $correctAnswer, $name): bool
+{
+    if ($userAnswer == $correctAnswer) {
+        line("Correct!");
+        return true;
+    } else {
+        line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctAnswer\"");
+        line("Let's try again, $name!");
+        exit;
+    }
+}
+
+function gcd($randomNumber1, $randomNumber2) {
+    while ($randomNumber1 != $randomNumber2)
+        if ($randomNumber1>$randomNumber2)
+            $randomNumber1 -= $randomNumber2;
+        else
+            $randomNumber2 -= $randomNumber1;
+    return $randomNumber1;
+}
+
+///getters///
 function getTest ($gameData)
 {
     return $gameData['test'];
@@ -145,3 +93,31 @@ function getQuest ($gameData)
 {
     return $gameData['quest'];
 }
+
+function makeProgression($count = 10): array
+{
+    $beginNum = rand(1,10);
+    $range = rand(1,10);
+
+    $result = [$beginNum];
+
+    for ($i = 1; $i <= $count; $i++) {
+        $result[] = $result[$i - 1] + $range;
+    }
+
+    $rand = rand(0,$count);
+    $correctNum = $result[$rand];
+    $result[$rand] = '..';
+
+    $result = implode(' | ', $result);
+
+//    print_r (['test' => $result, 'correctAnswer' => $correctNum]);
+    return ['type' =>'progress','test' => $result, 'correctAnswer' => $correctNum];
+}
+
+
+
+
+
+
+

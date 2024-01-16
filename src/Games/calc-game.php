@@ -2,33 +2,33 @@
 
 namespace calc\Game;
 
-require "./src/Engine.php";
-
-use function cli\line;
-use function cli\prompt;
-use function Engine\helloUser;
-use function Engine\answerChecker;
-use function Engine\makeProgression;
-use function Engine\playGame;
-use function Engine\makeCalc;
-
 const QUEST = 'What is the result of the expression?';
-function calcGame()
+function makeCalc(): array
 {
-    $gameData = [
-        'type' => 'calc',
-        'quest' => QUEST,
-        'test' => [],
-        'correctAnswer' => []
-    ];
+    $operators = ["+", "-", "*"];
+    $operator = $operators[array_rand($operators)];
+    $operand1 = rand(1,10);
+    $operand2 = rand(1,10);
 
-    $testData = makeCalc();
-    $gameData['test'] = $testData['test'];
-    $gameData['correctAnswer'] = $testData['correctAnswer'];
+    switch ($operator) {
+        case "+":
+            $result = "$operand1 + $operand2";
+            $correct = $operand1 + $operand2;
+            break;
+        case "-":
+            $result = "$operand1 - $operand2";
+            $correct = $operand1 - $operand2;
+            break;
+        case "*":
+            $result = "$operand1 * $operand2";
+            $correct = $operand1 * $operand2;
+            break;
+        default:
+            $result = null;
+            $correct = null;
+            break;
+    }
 
-//    print_r($gameData);
-    return $gameData;
+    return ['quest' => QUEST, 'type' =>'calc', 'test' => $result, 'correctAnswer' => $correct];
 
 }
-
-playGame(calcGame());

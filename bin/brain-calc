@@ -4,7 +4,9 @@
 
 require "./vendor/autoload.php";
 require_once "./src/Games/calc-game.php";
+require_once "./src/Engine.php";
 
-use function calc\Game\calcGame;
+use function Engine\playGame;
+use function calc\Game\makeCalc;
 
-calcGame();
+playGame(makeCalc());
