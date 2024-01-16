@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+
+<?php
+
+require "./vendor/autoload.php";
+require_once "./src/Games/prime-game.php";
+require_once "./src/Engine.php";
+
+use function Engine\playGame;
+use function prime\Game\makePrime;
+
+playGame(makePrime());

@@ -8,6 +8,7 @@ use function cli\line;
 use function cli\prompt;
 use function even\Game\makeEven;
 use function calc\Game\makeCalc;
+use function prime\Game\makePrime;
 use function progression\Game\makeProgression;
 use function gcd\Game\makeGcd;
 
@@ -27,6 +28,7 @@ function playGame($gameData): void
                 "progress" => makeProgression(),
                 "even" => makeEven(),
                 "gcd" => makeGcd(),
+                "prime" => makePrime(),
                 default => null,
             };
         }
@@ -58,7 +60,7 @@ function answerChecker($userAnswer, $correctAnswer, $name): bool
 function gcd($randomNumber1, $randomNumber2)
 {
     while ($randomNumber1 != $randomNumber2) {
-        if ($randomNumber1>$randomNumber2) {
+        if ($randomNumber1 > $randomNumber2) {
             $randomNumber1 -= $randomNumber2;
         } else {
             $randomNumber2 -= $randomNumber1;
@@ -87,12 +89,3 @@ function getQuest($gameData)
 {
     return $gameData['quest'];
 }
-
-
-
-
-
-
-
-
-
