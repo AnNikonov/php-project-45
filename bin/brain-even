@@ -4,7 +4,9 @@
 
 require "./vendor/autoload.php";
 require_once "./src/Games/even-game.php";
+require_once "./src/Engine.php";
 
-use function even\Game\evenGame;
+use function Engine\playGame;
+use function even\Game\makeEven;
 
-evenGame();
+playGame(makeEven());

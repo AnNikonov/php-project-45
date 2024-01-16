@@ -2,29 +2,21 @@
 
 namespace even\Game;
 
-require "./src/Engine.php";
+const QUEST = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-use function cli\line;
-use function cli\prompt;
-use function Engine\helloUser;
-use function Engine\answerChecker;
-
-function evenGame()
+function makeEven(): array
 {
-    $name = helloUser();
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    $randNum = rand(1,10);
 
-    for ($i = 0; $i < 3; $i++) {
-        $randomNumber = rand(1, 100);
-        line("Question: %s", $randomNumber);
-        $userAnswer = prompt("Yuor answer");
-        if ($randomNumber % 2 == 0) {
-            $correctanswer = "yes";
-            answerChecker($userAnswer, $correctanswer, $name);
-        } elseif ($randomNumber % 2 != 0) {
-            $correctanswer = "no";
-            answerChecker($userAnswer, $correctanswer, $name);
-        }
+    switch ($randNum) {
+        case $randNum % 2 == 0:
+            $correct = 'yes';
+            break;
+        case $randNum % 2 != 0:
+            $correct = 'no';
+            break;
     }
-    line("Congratulations, %s!", $name);
+
+    return ['quest' => QUEST, 'type' =>'even', 'test' => $randNum, 'correctAnswer' => $correct];
 }
+

@@ -3,10 +3,13 @@
 namespace Engine;
 
 require "./vendor/autoload.php";
+//require "Games/even-game.php";
 
 use function cli\line;
 use function cli\prompt;
+use function even\Game\makeEven;
 use function progression\Game\progressGame;
+use const even\Game\QUEST;
 
 function helloUser()
 {
@@ -16,17 +19,15 @@ function helloUser()
     return $name;
 }
 
-function answerChecker($userAnswer, $correctanswer, $name): bool
+function answerChecker($userAnswer, $correctAnswer, $name): bool
 {
-    if ($userAnswer == $correctanswer) {
+    if ($userAnswer == $correctAnswer) {
         line("Correct!");
         return true;
     } else {
-        line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctanswer\"");
+        line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctAnswer\"");
         line("Let's try again, $name!");
         exit;
-//        return false;
-
     }
 }
 
@@ -91,34 +92,56 @@ function makeCalc()
 
 }
 
+
+
 function playGame($gameData) {
 
     $name = helloUser();
-    line($gameData['quest']);
+    line(getQuest($gameData));
 
     for ($i = 0; $i < 3; $i++) {
-        line("Question: %s", $gameData['test'] );
+        line("Question: %s", getTest($gameData));
         $userAnswer = prompt("Your answer");
-        if (answerChecker($userAnswer, $gameData['correctAnswer'], $name)) {
-            switch ($gameData['type']) {
+        if (answerChecker($userAnswer, getCorrectAnswer($gameData), $name)) {
+            switch (getType($gameData)) {
                 case "calc":
                     $gameData = makeCalc();
                     break;
                 case "progress":
                     $gameData = makeProgression();
                     break;
-//                case "calc":
-//                    $gameData = makeCalc();
-//                    break;
-//                default:
-//                    $gameData = null;
-//                    break;
+                case "even":
+                    $gameData = makeEven();
+                    break;
+                case "gcd":
+                    $gameData = makeGcd();
+                    break;
+                default:
+                    $gameData = null;
+                    break;
             }
         }
-//        answerChecker($userAnswer, $gameData['correctAnswer'], $name);
-
     }
-
-
     line("Congratulations, %s!", $name);
+}
+
+///getters
+function getTest ($gameData)
+{
+    return $gameData['test'];
+}
+
+function getType ($gameData)
+{
+    return $gameData['type'];
+}
+
+function getCorrectAnswer ($gameData)
+{
+    return $gameData['correctAnswer'];
+}
+
+function getQuest ($gameData)
+{
+    return $gameData['quest'];
 }
