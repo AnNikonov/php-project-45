@@ -10,7 +10,16 @@ _Brain-even_
 
 
 _Brain-calc_
-https://asciinema.org/a/5902kA0sZ3LRq0MCEdLfYwCmQ
+[![asciicast](https://asciinema.org/a/5902kA0sZ3LRq0MCEdLfYwCmQ.svg)](https://asciinema.org/a/5902kA0sZ3LRq0MCEdLfYwCmQ)
 
 _Brain-gcd_
-https://asciinema.org/a/avmQLNnfGtZobhKZQstsedDU6
+[![asciicast](https://asciinema.org/a/avmQLNnfGtZobhKZQstsedDU6.svg)](https://asciinema.org/a/avmQLNnfGtZobhKZQstsedDU6)
+
+_Brain-even_
+[![asciicast](https://asciinema.org/a/avmQLNnfGtZobhKZQstsedDU6.svg)](https://asciinema.org/a/avmQLNnfGtZobhKZQstsedDU6)
+
+_Brain-progression_
+[![asciicast](https://asciinema.org/a/V67xcVzRtDd60ZemO1oX8mn3F.svg)](https://asciinema.org/a/V67xcVzRtDd60ZemO1oX8mn3F)
+
+_Brain-prime_
+[![asciicast](https://asciinema.org/a/FqYBv2huLkfMU3t7TEEOA4O22.svg)](https://asciinema.org/a/FqYBv2huLkfMU3t7TEEOA4O22)
