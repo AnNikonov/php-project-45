@@ -30,5 +30,4 @@ function makeCalc(): array
     }
 
     return ['quest' => QUEST, 'type' =>'calc', 'test' => $result, 'correctAnswer' => $correct];
-
 }

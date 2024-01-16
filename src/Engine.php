@@ -3,13 +3,12 @@
 namespace Engine;
 
 require "./vendor/autoload.php";
-//require "Games/even-game.php";
 
 use function cli\line;
 use function cli\prompt;
 use function even\Game\makeEven;
 use function calc\Game\makeCalc;
-use function progression\Game\progressGame;
+use function progression\Game\makeProgression;
 
 ///main game start function///
 function playGame($gameData) {
@@ -21,23 +20,13 @@ function playGame($gameData) {
         line("Question: %s", getTest($gameData));
         $userAnswer = prompt("Your answer");
         if (answerChecker($userAnswer, getCorrectAnswer($gameData), $name)) {
-            switch (getType($gameData)) {
-                case "calc":
-                    $gameData = makeCalc();
-                    break;
-                case "progress":
-                    $gameData = makeProgression();
-                    break;
-                case "even":
-                    $gameData = makeEven();
-                    break;
-                case "gcd":
-                    $gameData = makeGcd();
-                    break;
-                default:
-                    $gameData = null;
-                    break;
-            }
+            $gameData = match (getType($gameData)) {
+                "calc" => makeCalc(),
+                "progress" => makeProgression(),
+                "even" => makeEven(),
+                "gcd" => makeGcd(),
+                default => null,
+            };
         }
     }
     line("Congratulations, %s!", $name);
@@ -94,26 +83,7 @@ function getQuest ($gameData)
     return $gameData['quest'];
 }
 
-function makeProgression($count = 10): array
-{
-    $beginNum = rand(1,10);
-    $range = rand(1,10);
 
-    $result = [$beginNum];
-
-    for ($i = 1; $i <= $count; $i++) {
-        $result[] = $result[$i - 1] + $range;
-    }
-
-    $rand = rand(0,$count);
-    $correctNum = $result[$rand];
-    $result[$rand] = '..';
-
-    $result = implode(' | ', $result);
-
-//    print_r (['test' => $result, 'correctAnswer' => $correctNum]);
-    return ['type' =>'progress','test' => $result, 'correctAnswer' => $correctNum];
-}
 
 
 

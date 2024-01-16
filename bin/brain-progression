@@ -4,7 +4,9 @@
 
 require "./vendor/autoload.php";
 require_once "./src/Games/progression-game.php";
+require_once "./src/Engine.php";
 
-use function progression\Game\progressGame;
+use function Engine\playGame;
+use function progression\Game\makeProgression;
 
-progressGame();
+playGame(makeProgression());

@@ -2,33 +2,23 @@
 
 namespace progression\Game;
 
-require "./src/Engine.php";
-
-use function cli\line;
-use function cli\prompt;
-use function Engine\helloUser;
-use function Engine\answerChecker;
-use function Engine\makeProgression;
-use function Engine\playGame;
-
 const QUEST = 'What number is missing in the progression?';
-function progressGame ()
+function makeProgression($count = 10): array
 {
-    $gameData = [
-        'type' => 'progress',
-        'quest' => QUEST,
-        'test' => [],
-        'correctAnswer' => []
-    ];
+    $beginNum = rand(1,10);
+    $range = rand(1,10);
 
-    $testData = makeProgression();
-    $gameData['test'] = $testData['test'];
-    $gameData['correctAnswer'] = $testData['correctAnswer'];
+    $result = [$beginNum];
 
-//    print_r($gameData);
-    return $gameData;
+    for ($i = 1; $i <= $count; $i++) {
+        $result[] = $result[$i - 1] + $range;
+    }
 
+    $rand = rand(0,$count);
+    $correct = $result[$rand];
+    $result[$rand] = '..';
 
+    $result = implode(' | ', $result);
+
+    return ['quest' => QUEST, 'type' =>'progress', 'test' => $result, 'correctAnswer' => $correct];
 }
-
-playGame(progressGame());
