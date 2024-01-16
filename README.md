@@ -3,10 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7b3c93b95b00184f0e88/maintainability)](https://codeclimate.com/github/AnNikonov/php-project-45/maintainability)
 
-_Brain-even_
-<video width="320" height="240" controls>
-  <source src="casts/even.cast" type="video/cast">
-  Your browser does not support the video tag.
+
 
 
 _Brain-calc_
