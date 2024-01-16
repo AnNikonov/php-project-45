@@ -12,7 +12,8 @@ use function progression\Game\makeProgression;
 use function gcd\Game\makeGcd;
 
 ///main game start function///
-function playGame($gameData) {
+function playGame($gameData): void
+{
 
     $name = helloUser();
     line(getQuest($gameData));
@@ -34,7 +35,7 @@ function playGame($gameData) {
 }
 
 ///help functions///
-function helloUser()
+function helloUser(): string
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');

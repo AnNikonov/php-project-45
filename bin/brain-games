@@ -5,6 +5,6 @@
 require "./vendor/autoload.php";
 require_once "./src/Cli.php";
 
-use function \Cli\gamestart;
+use function Cli\gamestart;
 
 gamestart();
