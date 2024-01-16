@@ -7,7 +7,7 @@ _Brain-even_
 <video width="320" height="240" controls>
   <source src="casts/even.cast" type="video/cast">
   Your browser does not support the video tag.
-</video>
+
 
 _Brain-calc_
 https://asciinema.org/a/5902kA0sZ3LRq0MCEdLfYwCmQ
