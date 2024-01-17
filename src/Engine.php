@@ -13,7 +13,7 @@ use function progression\Game\makeProgression;
 use function gcd\Game\makeGcd;
 
 ///main game start function///
-function playGame($gameData): void
+function playGame(array $gameData): void
 {
 
     $name = helloUser();
@@ -45,7 +45,7 @@ function helloUser(): string
     return $name;
 }
 
-function answerChecker($userAnswer, $correctAnswer, $name): bool
+function answerChecker(string $userAnswer, string $correctAnswer, string $name): bool
 {
     if ($userAnswer == $correctAnswer) {
         line("Correct!");
@@ -57,7 +57,7 @@ function answerChecker($userAnswer, $correctAnswer, $name): bool
     }
 }
 
-function gcd($randomNumber1, $randomNumber2)
+function gcd(int $randomNumber1, int $randomNumber2)
 {
     while ($randomNumber1 != $randomNumber2) {
         if ($randomNumber1 > $randomNumber2) {
@@ -70,22 +70,22 @@ function gcd($randomNumber1, $randomNumber2)
 }
 
 ///getters///
-function getTest($gameData)
+function getTest(array $gameData)
 {
     return $gameData['test'];
 }
 
-function getType($gameData)
+function getType(array $gameData)
 {
     return $gameData['type'];
 }
 
-function getCorrectAnswer($gameData)
+function getCorrectAnswer(array $gameData)
 {
     return $gameData['correctAnswer'];
 }
 
-function getQuest($gameData)
+function getQuest(array $gameData)
 {
     return $gameData['quest'];
 }

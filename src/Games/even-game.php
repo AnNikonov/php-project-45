@@ -8,11 +8,11 @@ function makeEven(): array
 {
     $randNum = rand(1, 10);
 
-    switch ($randNum) {
-        case $randNum % 2 == 0:
+    switch ($randNum % 2) {
+        case 0:
             $correct = 'yes';
             break;
-        case $randNum % 2 != 0:
+        case 1:
             $correct = 'no';
             break;
     }

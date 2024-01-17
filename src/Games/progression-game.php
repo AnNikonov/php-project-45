@@ -3,7 +3,7 @@
 namespace progression\Game;
 
 const QUEST = 'What number is missing in the progression?';
-function makeProgression($count = 10): array
+function makeProgression(int $count = 10): array
 {
     $beginNum = rand(1, 10);
     $range = rand(1, 10);
