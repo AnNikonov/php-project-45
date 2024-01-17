@@ -70,17 +70,17 @@ function gcd(int $randomNumber1, int $randomNumber2)
 }
 
 ///getters///
-function getTest(array $gameData)
+function getTest(array|null $gameData)
 {
     return $gameData['test'];
 }
 
-function getType(array $gameData)
+function getType(array|null $gameData)
 {
     return $gameData['type'];
 }
 
-function getCorrectAnswer(array $gameData)
+function getCorrectAnswer(array|null $gameData)
 {
     return $gameData['correctAnswer'];
 }
