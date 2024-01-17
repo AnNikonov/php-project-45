@@ -5,7 +5,7 @@ namespace prime\Game;
 const QUEST = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 function makePrime(): array
 {
-    $num = rand(1,100);
+    $num = rand(1, 100);
     $correct = 'yes';
 
     for ($i = 2; $i < $num; $i++) {

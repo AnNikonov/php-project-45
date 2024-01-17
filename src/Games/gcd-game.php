@@ -3,6 +3,7 @@
 namespace gcd\Game;
 
 use function Engine\gcd;
+
 const QUEST = 'Find the greatest common divisor of given numbers.';
 
 function makeGcd(): array
@@ -13,5 +14,5 @@ function makeGcd(): array
     $test = "$randomNumber1 $randomNumber2";
     $correctAnswer = gcd($randomNumber1, $randomNumber2);
 
-    return ['quest' => QUEST, 'type' =>'gcd', 'test' => $test, 'correctAnswer' => $correctAnswer];
+    return ['quest' => QUEST, 'type' => 'gcd', 'test' => $test, 'correctAnswer' => $correctAnswer];
 }

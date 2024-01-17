@@ -20,5 +20,5 @@ function makeProgression($count = 10): array
 
     $result = implode(' ', $result);
 
-    return ['quest' => QUEST, 'type' =>'progress', 'test' => $result, 'correctAnswer' => $correct];
+    return ['quest' => QUEST, 'type' => 'progress', 'test' => $result, 'correctAnswer' => $correct];
 }

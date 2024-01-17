@@ -9,14 +9,13 @@ function makeEven(): array
     $randNum = rand(1, 10);
 
     switch ($randNum) {
-    case $randNum % 2 == 0:
-        $correct = 'yes';
-        break;
-    case $randNum % 2 != 0:
-        $correct = 'no';
-        break;
+        case $randNum % 2 == 0:
+            $correct = 'yes';
+            break;
+        case $randNum % 2 != 0:
+            $correct = 'no';
+            break;
     }
 
-    return ['quest' => QUEST, 'type' =>'even', 'test' => $randNum, 'correctAnswer' => $correct];
+    return ['quest' => QUEST, 'type' => 'even', 'test' => $randNum, 'correctAnswer' => $correct];
 }
-
