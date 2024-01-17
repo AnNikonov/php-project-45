@@ -3,7 +3,7 @@
 namespace gcd\Game;
 
 use function Engine\gcd;
-const QUEST = 'What is the result of the expression?';
+const QUEST = 'Find the greatest common divisor of given numbers.';
 
 function makeGcd(): array
 {
