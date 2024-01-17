@@ -72,17 +72,29 @@ function gcd(int $randomNumber1, int $randomNumber2)
 ///getters///
 function getTest(array|null $gameData)
 {
-    return $gameData['test'];
+    if ($gameData !== null && array_key_exists('test', $gameData)) {
+        return $gameData['test'];
+    } else {
+        return null;
+    }
 }
 
 function getType(array|null $gameData)
 {
-    return $gameData['type'];
+    if ($gameData !== null && array_key_exists('type', $gameData)) {
+        return $gameData['type'];
+    } else {
+        return null;
+    }
 }
 
 function getCorrectAnswer(array|null $gameData)
 {
-    return $gameData['correctAnswer'];
+    if ($gameData !== null && array_key_exists('correctAnswer', $gameData)) {
+        return $gameData['correctAnswer'];
+    } else {
+        return null;
+    }
 }
 
 function getQuest(array $gameData)
