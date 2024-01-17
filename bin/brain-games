@@ -5,6 +5,6 @@
 require __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../src/Cli.php";
 
-use function Cli\gamestart;
+use function Cli\gameStart;
 
-gamestart();
+gameStart();
