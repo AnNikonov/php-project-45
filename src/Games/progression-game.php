@@ -18,7 +18,7 @@ function makeProgression($count = 10): array
     $correct = $result[$rand];
     $result[$rand] = '..';
 
-    $result = implode(' | ', $result);
+    $result = implode(' ', $result);
 
     return ['quest' => QUEST, 'type' =>'progress', 'test' => $result, 'correctAnswer' => $correct];
 }
