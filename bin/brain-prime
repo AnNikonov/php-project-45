@@ -7,6 +7,6 @@ require_once __DIR__ . "/../src/Games/prime-game.php";
 require_once __DIR__ . "/../src/Engine.php";
 
 use function Engine\playGame;
-use function prime\Game\makePrime;
+use function prime\Game\playPrime;
 
-playGame(makePrime());
+playPrime();

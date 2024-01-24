@@ -2,17 +2,21 @@
 
 namespace prime\Game;
 
+use function Engine\playGame;
+
 const QUEST = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-function makePrime(): array
+function playPrime(): void
 {
-    $num = rand(1, 100);
-    $correct = 'yes';
+    for ($i = 0; $i < 3; $i++) {
+        $num = rand(1, 100);
+        $correct = 'yes';
 
-    for ($i = 2; $i < $num; $i++) {
-        if ($num % $i == 0) {
-            $correct = 'no';
+        for ($in = 2; $in < $num; $in++) {
+            if ($num % $in == 0) {
+                $correct = 'no';
+            }
         }
+        $gameData[] = ['test' => $num, 'correctAnswer' => $correct];
     }
-
-    return ['quest' => QUEST, 'type' => 'prime', 'test' => $num, 'correctAnswer' => $correct];
+    playGame($gameData, QUEST);
 }

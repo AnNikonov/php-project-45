@@ -2,23 +2,28 @@
 
 namespace progression\Game;
 
+use function Engine\playGame;
+
 const QUEST = 'What number is missing in the progression?';
-function makeProgression(int $count = 10): array
+function playProgression(int $count = 10): void
 {
-    $beginNum = rand(1, 10);
-    $range = rand(1, 10);
+    for ($i = 0; $i < 3; $i++) {
+        $beginNum = rand(1, 10);
+        $range = rand(1, 10);
 
-    $result = [$beginNum];
+        $result = [$beginNum];
 
-    for ($i = 1; $i <= $count; $i++) {
-        $result[] = $result[$i - 1] + $range;
+        for ($in = 1; $in <= $count; $in++) {
+            $result[] = $result[$in - 1] + $range;
+        }
+
+        $rand = rand(0, $count);
+        $correct = $result[$rand];
+        $result[$rand] = '..';
+
+        $result = implode(' ', $result);
+        $gameData[] = ['test' => $result, 'correctAnswer' => $correct];
     }
-
-    $rand = rand(0, $count);
-    $correct = $result[$rand];
-    $result[$rand] = '..';
-
-    $result = implode(' ', $result);
-
-    return ['quest' => QUEST, 'type' => 'progress', 'test' => $result, 'correctAnswer' => $correct];
+    print_r($gameData);
+    playGame($gameData, QUEST);
 }

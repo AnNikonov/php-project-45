@@ -7,6 +7,6 @@ require_once __DIR__ . "/../src/Games/progression-game.php";
 require_once __DIR__ . "/../src/Engine.php";
 
 use function Engine\playGame;
-use function progression\Game\makeProgression;
+use function progression\Game\playProgression;
 
-playGame(makeProgression());
+playProgression();
