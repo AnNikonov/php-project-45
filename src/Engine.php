@@ -13,27 +13,19 @@ use function progression\Game\makeProgression;
 use function gcd\Game\makeGcd;
 
 ///main game start function///
-function playGame(array $gameData): void
+function playGame(array $gameData, $quest): void
 {
 
     $name = helloUser();
-    line(getQuest($gameData));
+    line($quest);
 
-    for ($i = 0; $i < 3; $i++) {
-        line("Question: %s", getTest($gameData));
+    foreach ($gameData as $round) {
+        line("Question: %s", getTest($round));
         $userAnswer = prompt("Your answer");
-        if (answerChecker($userAnswer, getCorrectAnswer($gameData), $name)) {
-            $gameData = match (getType($gameData)) {
-                "calc" => makeCalc(),
-                "progress" => makeProgression(),
-                "even" => makeEven(),
-                "gcd" => makeGcd(),
-                "prime" => makePrime(),
-                default => null,
-            };
+        if (!answerChecker($userAnswer, getCorrectAnswer($round), $name)) {
+            break;
         }
-    }
-    line("Congratulations, %s!", $name);
+    };
 }
 
 ///help functions///
@@ -53,7 +45,7 @@ function answerChecker(string $userAnswer, string $correctAnswer, string $name):
     } else {
         line("\"$userAnswer\", is wrong answer ;(. Correct answer was \"$correctAnswer\"");
         line("Let's try again, $name!");
-        exit;
+        return false;
     }
 }
 
