@@ -7,6 +7,7 @@ use function Engine\playGame;
 const QUEST = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 function playPrime(): void
 {
+    $gameData = [];
     for ($i = 0; $i < 3; $i++) {
         $num = rand(1, 100);
         $correct = 'yes';

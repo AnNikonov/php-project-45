@@ -7,6 +7,7 @@ use function Engine\playGame;
 const QUEST = 'What number is missing in the progression?';
 function playProgression(int $count = 10): void
 {
+    $gameData = [];
     for ($i = 0; $i < 3; $i++) {
         $beginNum = rand(1, 10);
         $range = rand(1, 10);
@@ -24,6 +25,5 @@ function playProgression(int $count = 10): void
         $result = implode(' ', $result);
         $gameData[] = ['test' => $result, 'correctAnswer' => $correct];
     }
-    print_r($gameData);
     playGame($gameData, QUEST);
 }

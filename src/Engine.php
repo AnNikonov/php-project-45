@@ -6,11 +6,6 @@ require __DIR__ . "/../vendor/autoload.php";
 
 use function cli\line;
 use function cli\prompt;
-use function even\Game\makeEven;
-use function calc\Game\makeCalc;
-use function prime\Game\makePrime;
-use function progression\Game\makeProgression;
-use function gcd\Game\makeGcd;
 
 ///main game start function///
 function playGame(array $gameData, $quest): void

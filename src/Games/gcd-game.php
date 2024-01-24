@@ -9,6 +9,7 @@ const QUEST = 'Find the greatest common divisor of given numbers.';
 
 function playGcd(): void
 {
+    $gameData = [];
     for ($i = 0; $i < 3; $i++) {
         $randomNumber1 = rand(1, 10);
         $randomNumber2 = rand(1, 10);

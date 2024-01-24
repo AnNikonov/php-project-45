@@ -8,6 +8,7 @@ const QUEST = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function playEven(): void
 {
+    $gameData = [];
     for ($i = 0; $i < 3; $i++) {
         $randNum = rand(1, 10);
 

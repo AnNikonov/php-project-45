@@ -7,6 +7,7 @@ use function Engine\playGame;
 const QUEST = 'What is the result of the expression?';
 function playCalc(): void
 {
+    $gameData = [];
     $operators = ["+", "-", "*"];
     for ($i = 0; $i < 3; $i++) {
         $operator = $operators[array_rand($operators)];
