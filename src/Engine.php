@@ -23,8 +23,9 @@ function playGame(array $gameData, $quest): void
         line("Question: %s", getTest($round));
         $userAnswer = prompt("Your answer");
         if (!answerChecker($userAnswer, getCorrectAnswer($round), $name)) {
-            break;
+            return;
         }
+        line("Congratulations, %s!", $name);
     };
 }
 
