@@ -8,7 +8,7 @@ use function cli\line;
 use function cli\prompt;
 
 ///main game start function///
-function playGame(array $gameData, $quest): void
+function playGame(array $gameData, string $quest): void
 {
 
     $name = helloUser();
