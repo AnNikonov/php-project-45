@@ -1,6 +1,6 @@
 <?php
 
-namespace Engine;
+namespace BrainGames\Engine;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -83,9 +83,4 @@ function getCorrectAnswer(array|null $gameData)
     } else {
         return null;
     }
-}
-
-function getQuest(array $gameData)
-{
-    return $gameData['quest'];
 }

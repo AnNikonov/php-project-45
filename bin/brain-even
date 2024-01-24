@@ -3,9 +3,7 @@
 <?php
 
 require __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../src/Games/even-game.php";
-require_once __DIR__ . "/../src/Engine.php";
 
-use function even\Game\playEven;
+use function BrainGames\Games\Even\playEven;
 
 playEven();

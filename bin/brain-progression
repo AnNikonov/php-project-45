@@ -3,10 +3,7 @@
 <?php
 
 require __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../src/Games/progression-game.php";
-require_once __DIR__ . "/../src/Engine.php";
 
-use function Engine\playGame;
-use function progression\Game\playProgression;
+use function BrainGames\Games\Progression\playProgression;
 
 playProgression();

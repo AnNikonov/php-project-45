@@ -3,9 +3,15 @@
     "description": "brain-games proect for Hexlet by Anton Nikonov",
     "license": "MIT",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
+        "files": [
+            "src/Cli.php",
+            "src/Games/even-game.php",
+            "src/Engine.php",
+            "src/Games/calc-game.php",
+            "src/Games/gcd-game.php",
+            "src/Games/progression-game.php",
+            "src/Games/prime-game.php"
+        ]
     },
     "authors": [
         {

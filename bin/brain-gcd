@@ -3,10 +3,7 @@
 <?php
 
 require __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../src/Games/gcd-game.php";
-require_once __DIR__ . "/../src/Engine.php";
 
-use function Engine\playGame;
-use function gcd\Game\playGcd;
+use function BrainGames\Games\Gcd\playGcd;
 
 playGcd();
